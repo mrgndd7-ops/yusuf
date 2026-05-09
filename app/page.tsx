@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
 import Heritage from "@/components/sections/Heritage";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
@@ -33,7 +32,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <Stats />
       <Heritage />
       <Services />
       <Process />
