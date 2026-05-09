@@ -44,11 +44,11 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href={`tel:${SITE.phone}`}
+            href="#iletisim"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] text-sm font-medium hover:bg-[var(--color-accent-2)] transition-colors"
           >
             <Phone size={15} />
-            {SITE.phoneDisplay}
+            Bize Ulaşın
           </a>
           <button
             type="button"
@@ -75,12 +75,12 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href={`tel:${SITE.phone}`}
+              href="#iletisim"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] font-medium"
             >
               <Phone size={16} />
-              {SITE.phoneDisplay}
+              Bize Ulaşın
             </a>
           </nav>
         </div>
