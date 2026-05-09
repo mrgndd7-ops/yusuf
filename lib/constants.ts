@@ -139,24 +139,36 @@ export const TESTIMONIALS = [
 
 export const FAQ = [
   {
-    q: "Anahtar teslim bir proje ne kadar sürer?",
-    a: "Arsa büyüklüğü ve daire sayısına göre değişmekle birlikte; ortalama bir butik bina projesi ruhsattan teslime 14–18 ay arasında tamamlanır. Tadilat projeleri 4–10 hafta sürebilir.",
+    q: "Anahtar teslim inşaat ne demektir, neleri kapsar?",
+    a: "Anahtar teslim; hafriyat ve temelden başlayarak kaba inşaat, kalıp, demir, beton, tesisat (su, elektrik, doğalgaz, kanalizasyon), iç ve dış mekan ince işçiliği, mutfak ve ıslak hacim uygulamaları, cephe kaplaması ve son temizlik aşamalarının tamamlanarak yapının oturuma hazır halde sahibine teslim edilmesi sürecidir. Mal sahibi yalnızca eşyalarını taşıyıp yerleşir.",
   },
   {
-    q: "Hak ediş ve ödeme nasıl planlanır?",
-    a: "Sözleşmede ödeme planı; iş ilerleme yüzdesine bağlı 6–10 hak ediş olarak yazılır. Her hak edişte mal sahibi sahayı denetler ve fotoğraflı rapor teslim alır.",
+    q: "Sözleşme süreci nasıl ilerler, fiyat ne zaman netleşir?",
+    a: "Saha keşfi ve ihtiyaç analizinden sonra mimari avan proje, malzeme seçenekleri ve detaylı maliyet kalemleri tarafınızla netleştirilir. Tüm kalemler üzerinde mutabık kalındığında sabit fiyatlı sözleşme imzalanır; sözleşme süresi boyunca fiyat değişmez. Proje sonrası talep edeceğiniz ek işler ayrıca fiyatlandırılır.",
   },
   {
-    q: "Garanti süresi ne kadar?",
-    a: "Tüm teslim ettiğimiz yapılarda 2 yıl ücretsiz teknik bakım, 10 yıla kadar yapısal güvence sunarız. Bakım talepleri 24 saat içinde yanıtlanır.",
+    q: "Hak ediş ve ödeme planı nasıl işler?",
+    a: "Ödemeler, sözleşmede belirlenen iş ilerleme aşamalarına (kaba inşaat, çatı, kapı pencere, ince işçilik, teslim) bağlı hak edişler şeklinde yapılır. Her hak ediş öncesi şantiye yerinde mal sahibiyle birlikte denetim yapılır; fotoğraflı ilerleme raporu sunulur, ardından ödeme alınır.",
   },
   {
-    q: "Hangi bölgelerde çalışıyorsunuz?",
-    a: "Ağırlıklı olarak Eyüpsultan, Sultangazi, Sultanbeyli, Yeşilpınar ve çevre ilçelerde. İstanbul içi tüm projeler değerlendirmeye açıktır.",
+    q: "İşçilik ve yapı garantisi sunuyor musunuz?",
+    a: "Evet. Teslim ettiğimiz tüm yapılar yasal mevzuata uygun yapısal güvence kapsamındadır. İnce işçilik kaynaklı ortaya çıkabilecek sorunlar için işçilik garantimiz mevcuttur ve bakım talepleriniz hızla yanıtlanır. Biz teslim eder, biz arkasında dururuz.",
+  },
+  {
+    q: "Tadilat sırasında evden çıkmamız gerekir mi?",
+    a: "Komple ıslak hacim, elektrik ve tesisat yenilemesi gibi kapsamlı dönüşümlerde toz, gürültü ve su kesintisi nedeniyle evin boşaltılması önerilir. Bölgesel veya odalık yenilemelerde ise gün sonu temizliği yapılır, yaşam alanınız mümkün olduğunca korunarak çalışılır.",
+  },
+  {
+    q: "Malzeme seçimini kim yapar, kendi malzememizi getirebilir miyiz?",
+    a: "Tüm malzeme tercihleri tarafınızla birlikte belirlenir. Anlaşmalı olduğumuz markalardan seçim yapabilir, kendi malzemenizi temin edebilir veya iç mimari paketimizle uyumlu çözümleri tercih edebilirsiniz. Hangi yolu seçerseniz seçin, malzeme kalitesi sözleşmede belgelenir.",
+  },
+  {
+    q: "Ruhsat, iskan ve resmi süreçleri kim takip eder?",
+    a: "Belediyeden alınacak yapı ruhsatı, statik ve mekanik proje onayları, su elektrik abonelikleri ve teslim sonrası iskan başvurusu gibi resmi süreçlerin tamamı ekibimizce yürütülür. Mal sahibi yalnızca imza aşamalarında sürece dahil olur.",
   },
   {
     q: "Ücretsiz keşif ve teklif veriyor musunuz?",
-    a: "Evet. İstanbul içi tüm keşifler ücretsizdir. Görüşme sonrası 5 iş günü içinde detaylı teklif ve örnek sözleşme paylaşılır.",
+    a: "İstanbul içi tüm saha keşifleri ücretsizdir. Görüşme sonrası kısa sürede detaylı teklif ve örnek sözleşmeyi tarafınıza ileriz. Telefon veya WhatsApp üzerinden randevu oluşturabilirsiniz.",
   },
 ];
 
