@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { MapPin, Phone, MessageCircle, Instagram, Facebook, ArrowRight } from "lucide-react";
-import { SITE, NAV } from "@/lib/constants";
+import { Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { SITE } from "@/lib/constants";
 
 const LEGAL = [
   { label: "KVKK Aydınlatma Metni", href: "/kvkk" },
@@ -60,69 +60,25 @@ export function Footer() {
         <div className="divider-gold" />
       </div>
 
-      {/* Info grid */}
-      <div className="container-x py-14 grid grid-cols-1 md:grid-cols-12 gap-10">
-        <div className="md:col-span-5 flex flex-col gap-5">
-          <span className="font-display text-[var(--color-text)] text-xl">
-            Yusuf <span className="text-[var(--color-accent)]">İnşaat</span>
-          </span>
-          <p className="text-[var(--color-muted)] max-w-md leading-relaxed text-sm">
-            Üç kuşaktır İstanbul'da; sağlam temel, dürüst söz ve babadan oğula
-            süregelen ustalıkla yapı inşa ediyoruz.
-          </p>
-          <div className="flex items-center gap-3 pt-2">
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="grid place-items-center w-10 h-10 rounded-md border border-[var(--color-border)] text-[var(--color-text-soft)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors"
-            >
-              <Instagram size={16} />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="grid place-items-center w-10 h-10 rounded-md border border-[var(--color-border)] text-[var(--color-text-soft)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors"
-            >
-              <Facebook size={16} />
-            </a>
-          </div>
-        </div>
-
-        <div className="md:col-span-3">
-          <h4 className="text-[var(--color-text)] mb-4 text-sm tracking-wider uppercase">
-            Sayfa
-          </h4>
-          <ul className="flex flex-col gap-2.5">
-            {NAV.map((n) => (
-              <li key={n.href}>
-                <a
-                  href={n.href}
-                  className="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
-                >
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-4">
-          <h4 className="text-[var(--color-text)] mb-4 text-sm tracking-wider uppercase">
-            İletişim
-          </h4>
-          <ul className="flex flex-col gap-3 text-sm text-[var(--color-muted)]">
-            <li className="flex items-start gap-3">
-              <MapPin size={16} className="text-[var(--color-accent)] mt-0.5 shrink-0" />
-              <span>{SITE.address}</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone size={16} className="text-[var(--color-accent)] shrink-0" />
-              <a href={`tel:${SITE.phone}`} className="hover:text-[var(--color-accent)] transition-colors">
-                {SITE.phoneDisplay}
-              </a>
-            </li>
-          </ul>
-        </div>
+      {/* Watermark */}
+      <div
+        aria-hidden
+        className="relative overflow-hidden flex items-center justify-center pointer-events-none py-10 md:py-14"
+      >
+        <span
+          className="font-display font-semibold tracking-[-0.04em] whitespace-nowrap select-none leading-none"
+          style={{
+            fontSize: "clamp(7rem, 22vw, 26rem)",
+            background:
+              "linear-gradient(180deg, rgba(200,169,110,0.18) 0%, rgba(200,169,110,0.03) 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+            WebkitTextStroke: "1px rgba(200,169,110,0.22)",
+          }}
+        >
+          YUSUF
+        </span>
       </div>
 
       {/* Legal row */}
@@ -142,27 +98,6 @@ export function Footer() {
             </li>
           ))}
         </ul>
-      </div>
-
-      {/* Watermark */}
-      <div
-        aria-hidden
-        className="relative overflow-hidden h-[16vw] md:h-[14vw] flex items-center justify-center pointer-events-none"
-      >
-        <span
-          className="font-display font-semibold tracking-[-0.04em] whitespace-nowrap select-none leading-none"
-          style={{
-            fontSize: "clamp(8rem, 22vw, 26rem)",
-            background:
-              "linear-gradient(180deg, rgba(200,169,110,0.12) 0%, rgba(200,169,110,0.02) 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            WebkitTextStroke: "1px rgba(200,169,110,0.18)",
-          }}
-        >
-          YUSUF
-        </span>
       </div>
     </footer>
   );
