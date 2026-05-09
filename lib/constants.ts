@@ -111,8 +111,8 @@ export const PROCESS = [
   },
   {
     step: "05",
-    title: "Teslim & Garanti",
-    description: "Anahtar teslim sonrası 2 yıl ücretsiz bakım, 10 yıl yapısal güvence.",
+    title: "Teslim & Güvence",
+    description: "Anahtar teslimden sonra yapısal güvence ve teknik bakım desteğiyle yanınızdayız.",
   },
 ];
 
