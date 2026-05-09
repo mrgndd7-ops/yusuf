@@ -165,9 +165,9 @@ export const ABOUT = {
   eyebrow: "Üç Kuşak, Tek Söz",
   subtitle: "Sağlam yapı, sağlam imza.",
   paragraphs: [
-    "Yusuf İnşaat, 1972'de Eyüpsultan'da kurulmuş bir aile firmasıdır. Babadan oğula aktarılan ustalıkla, bugüne kadar 380'i aşkın daireyi sahibine teslim ettik.",
+    "Yusuf İnşaat, Eyüpsultan'da kurulmuş bir aile firmasıdır. Dede yadigarı bir mesleği bugüne taşıyor; her projede aynı titizlikle, aynı sözle çalışıyoruz.",
     "Çalışma prensibimiz nettir: Sözünde durmak, kaliteden ödün vermemek ve her projeye kendi evimizmiş gibi yaklaşmak. Mimar, mühendis ve usta kadromuzla, projenin her aşamasında yanınızdayız.",
-    "Eyüpsultan, Sultangazi, Sultanbeyli ve Yeşilpınar başta olmak üzere İstanbul'un her semtinde imzamızı görebilirsiniz.",
+    "Eyüpsultan, Sultangazi, Sultanbeyli ve Yeşilpınar başta olmak üzere İstanbul'un her semtinde imzamızı görebilirsiniz; teslim ettiğimiz her yapı, ailemizin onurunu taşır.",
   ],
 };
 

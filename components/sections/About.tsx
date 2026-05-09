@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { ABOUT, SITE } from "@/lib/constants";
+import { ABOUT } from "@/lib/constants";
 
 const HIGHLIGHTS = [
   "Sözleşmeli, raporlu, şeffaf süreç",
@@ -88,20 +88,14 @@ export function About() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)] via-transparent to-transparent" />
 
-            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-              <div>
-                <div className="font-display text-[var(--color-accent)] text-3xl">
-                  {new Date().getFullYear() - SITE.founded}+
-                </div>
-                <div className="text-xs uppercase tracking-widest text-[var(--color-text-soft)]">
-                  Yıllık Tecrübe
-                </div>
+            <div className="absolute bottom-6 left-6 right-6">
+              <div className="font-display text-[var(--color-accent)] text-2xl md:text-3xl leading-tight">
+                Babadan oğula,
+                <br />
+                sağlam yapı.
               </div>
-              <div className="text-right">
-                <div className="font-display text-[var(--color-accent)] text-3xl">III</div>
-                <div className="text-xs uppercase tracking-widest text-[var(--color-text-soft)]">
-                  Kuşak Ustalık
-                </div>
+              <div className="text-xs uppercase tracking-widest text-[var(--color-text-soft)] mt-2">
+                Yusuf İnşaat
               </div>
             </div>
           </div>
