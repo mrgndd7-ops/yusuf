@@ -14,10 +14,21 @@ export function Contact() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = (data.get("name") || "").toString();
-    const phone = (data.get("phone") || "").toString();
-    const message = (data.get("message") || "").toString();
-    const text = `Merhaba, ben ${name}. Telefon: ${phone}\n\n${message}`;
+    const name = (data.get("name") || "").toString().trim();
+    const phone = (data.get("phone") || "").toString().trim();
+    const subject = (data.get("subject") || "").toString().trim();
+    const message = (data.get("message") || "").toString().trim();
+
+    const lines = [
+      "Merhaba Yusuf İnşaat,",
+      "",
+      `Ad Soyad: ${name}`,
+      `Telefon: ${phone}`,
+    ];
+    if (subject) lines.push(`Proje Türü: ${subject}`);
+    lines.push("", "Mesaj:", message);
+
+    const text = lines.join("\n");
     const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
