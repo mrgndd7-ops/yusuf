@@ -152,6 +152,39 @@ img-comparison-slider > * {
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { scrollbar-width: none; }
 
+.legal-content h2 {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.legal-content h3 {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-top: 0.75rem;
+}
+
+.legal-content p {
+  margin: 0;
+}
+
+.legal-content ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legal-content li {
+  list-style: disc;
+}
+
+.legal-content strong {
+  color: var(--color-text);
+}
+
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
