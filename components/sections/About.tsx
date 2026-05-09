@@ -7,7 +7,7 @@ import { ABOUT, SITE } from "@/lib/constants";
 
 const HIGHLIGHTS = [
   "Sözleşmeli, raporlu, şeffaf süreç",
-  "Mimar, mühendis ve usta — tek ekip",
+  "Mimar, mühendis ve usta, tek ekip",
   "Kentsel dönüşümde mal sahibi yanlısı model",
   "Teslimat sonrası 2 yıl ücretsiz bakım",
 ];

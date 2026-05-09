@@ -15,7 +15,7 @@ export function Faq() {
         <SectionTitle
           eyebrow="Sıkça Sorulan Sorular"
           title="Aklınızdaki ilk soruların cevabı."
-          subtitle="Bulamadığınız bir cevap varsa bize doğrudan ulaşın — telefon ucunda bir usta cevap verir."
+          subtitle="Bulamadığınız bir cevap varsa bize doğrudan ulaşın. Telefon ucunda bir usta cevap verir."
         />
 
         <div className="flex flex-col">

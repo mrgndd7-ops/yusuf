@@ -30,7 +30,7 @@ export function Services() {
         <SectionTitle
           eyebrow="Hizmetlerimiz"
           title="Temelden anahtara, tek elden uçtan uca yapım."
-          subtitle="Mimari, statik, ruhsat, şantiye ve teslimat — her aşamada aynı ekip, aynı söz."
+          subtitle="Mimari, statik, ruhsat, şantiye ve teslimat. Her aşamada aynı ekip, aynı söz."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">

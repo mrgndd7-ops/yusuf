@@ -14,7 +14,7 @@ export function Process() {
       <div className="container-x">
         <SectionTitle
           eyebrow="Çalışma Süreci"
-          title="Şeffaf, planlı ve raporlu — söz verdiğimiz takvimde teslim."
+          title="Şeffaf, planlı ve raporlu; söz verdiğimiz takvimde teslim."
           subtitle="Sizi sürprizlerle değil, raporlarla karşılarız. Her aşama öncesinde plan, sonrasında rapor."
         />
 

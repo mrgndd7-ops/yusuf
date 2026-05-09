@@ -55,14 +55,14 @@ export const SERVICES = [
     icon: "Hammer",
     title: "Tadilat & Renovasyon",
     description:
-      "Daire, villa ve bina yenileme; ıslak hacim, tesisat, elektrik, cephe ve iç mekan dönüşümü — yaşam alanınızı baştan kurar.",
+      "Daire, villa ve bina yenileme; ıslak hacim, tesisat, elektrik, cephe ve iç mekan dönüşümü ile yaşam alanınızı baştan kurar.",
     bullets: ["Komple iç tadilat", "Cephe & ısı yalıtım", "Mutfak & banyo yenileme"],
   },
   {
     icon: "ClipboardList",
     title: "Proje Danışmanlığı",
     description:
-      "Yatırımcılar ve mülk sahipleri için fizibilite, maliyet kontrolü, hak ediş ve süreç yönetimi — doğru karar sağlam temelle başlar.",
+      "Yatırımcılar ve mülk sahipleri için fizibilite, maliyet kontrolü, hak ediş ve süreç yönetimi. Doğru karar sağlam temelle başlar.",
     bullets: ["Fizibilite & maliyet", "Süreç & şantiye yönetimi", "Hak ediş & raporlama"],
   },
   {
@@ -102,7 +102,7 @@ export const PROCESS = [
   {
     step: "03",
     title: "Ruhsat & Hazırlık",
-    description: "Belediye süreci, statik ve mekanik onaylar — siz uğraşmadan biz yürütürüz.",
+    description: "Belediye süreci, statik ve mekanik onaylar; siz uğraşmadan biz yürütürüz.",
   },
   {
     step: "04",
