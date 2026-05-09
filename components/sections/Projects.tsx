@@ -6,11 +6,12 @@ import { PROJECTS } from "@/lib/projects";
 
 export function Projects() {
   return (
-    <section id="projeler" className="bg-[var(--color-bg)] section-py">
+    <section id="projeler" className="relative bg-[var(--color-bg-2)] section-py">
       <div className="container-x">
         <SectionTitle
-          title="Projelerimiz"
-          subtitle="İstanbul'un dört bir yanında hayata geçirdiğimiz seçili projeler."
+          eyebrow="Seçili Projeler"
+          title="İstanbul'un dört bir yanında imzamız."
+          subtitle="Eyüpsultan'dan Sultanbeyli'ye, anahtar teslim ve renovasyon projelerinden bir seçki."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

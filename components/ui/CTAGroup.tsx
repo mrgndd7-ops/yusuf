@@ -1,12 +1,10 @@
 "use client";
 
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 import Button from "./Button";
 import { SITE, CONTACT } from "@/lib/constants";
 
-type Props = {
-  layout?: "row" | "column";
-};
+type Props = { layout?: "row" | "column" };
 
 export function CTAGroup({ layout = "row" }: Props) {
   const dirCls =
@@ -25,6 +23,7 @@ export function CTAGroup({ layout = "row" }: Props) {
       >
         <Phone size={18} aria-hidden />
         {CONTACT.callLabel}
+        <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
       </Button>
       <Button
         as="a"
