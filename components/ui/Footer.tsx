@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Instagram, Facebook } from "lucide-react";
 import { SITE, NAV } from "@/lib/constants";
 
 export function Footer() {
@@ -6,11 +6,8 @@ export function Footer() {
     <footer className="relative bg-[var(--color-bg-2)] border-t border-[var(--color-border)] pt-20 pb-10">
       <div className="container-x grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-5 flex flex-col gap-5">
-          <div className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-9 h-9 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] font-display font-bold text-lg">
-              Y
-            </span>
-            <span className="font-display text-[var(--color-text)] text-lg">
+          <div>
+            <span className="font-display text-[var(--color-text)] text-xl">
               Yusuf <span className="text-[var(--color-accent)]">İnşaat</span>
             </span>
           </div>
@@ -67,12 +64,6 @@ export function Footer() {
               <Phone size={16} className="text-[var(--color-accent)] shrink-0" />
               <a href={`tel:${SITE.phone}`} className="hover:text-[var(--color-accent)] transition-colors">
                 {SITE.phoneDisplay}
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail size={16} className="text-[var(--color-accent)] shrink-0" />
-              <a href={`mailto:${SITE.email}`} className="hover:text-[var(--color-accent)] transition-colors">
-                {SITE.email}
               </a>
             </li>
           </ul>

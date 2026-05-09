@@ -1,10 +1,9 @@
 export const SITE = {
   name: "Yusuf İnşaat",
   tagline: "Babadan oğula, sağlam yapı.",
-  phone: "+905555555555",
-  phoneDisplay: "+90 555 555 55 55",
-  whatsapp: "905555555555",
-  email: "info@yusufinsaat.com",
+  phone: "+90533554",
+  phoneDisplay: "+90 533 554",
+  whatsapp: "90533554",
   city: "İstanbul",
   address: "Eyüpsultan, İstanbul",
   founded: 1972,

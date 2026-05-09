@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, MessageCircle, Send, Check } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Send, Check } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 import { CONTACT, SITE } from "@/lib/constants";
@@ -72,19 +72,6 @@ export function Contact() {
               </div>
             </a>
 
-            <a
-              href={`mailto:${SITE.email}`}
-              className="card-surface p-6 flex items-center gap-4 hover:border-[var(--color-accent)] transition-colors group"
-            >
-              <span className="grid place-items-center w-12 h-12 rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)] group-hover:bg-[var(--color-accent)] group-hover:text-[var(--color-dark)] transition-colors">
-                <Mail size={20} />
-              </span>
-              <div className="flex flex-col">
-                <span className="text-xs uppercase tracking-widest text-[var(--color-muted)]">E-posta</span>
-                <span className="text-[var(--color-text)] font-medium">{SITE.email}</span>
-              </div>
-            </a>
-
             <div className="card-surface p-6 flex items-center gap-4">
               <span className="grid place-items-center w-12 h-12 rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
                 <MapPin size={20} />
@@ -116,7 +103,6 @@ export function Contact() {
               <Field name="name" label="Ad Soyad *" required />
               <Field name="phone" label="Telefon *" type="tel" required />
             </div>
-            <Field name="email" label="E-posta" type="email" />
             <Field name="subject" label="Proje Türü" placeholder="Konut / Tadilat / Danışmanlık" />
             <FieldArea name="message" label="Mesajınız *" required />
 

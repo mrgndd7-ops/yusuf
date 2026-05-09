@@ -24,11 +24,8 @@ export function Navbar() {
       }`}
     >
       <div className="container-x flex items-center justify-between h-16 md:h-20">
-        <a href="#hero" className="flex items-center gap-2.5 group">
-          <span className="grid place-items-center w-9 h-9 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] font-display font-bold text-lg">
-            Y
-          </span>
-          <span className="font-display text-[var(--color-text)] text-lg tracking-tight">
+        <a href="#hero" className="group">
+          <span className="font-display text-[var(--color-text)] text-lg md:text-xl tracking-tight">
             Yusuf <span className="text-[var(--color-accent)]">İnşaat</span>
           </span>
         </a>
