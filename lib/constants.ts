@@ -83,8 +83,8 @@ export const SERVICES = [
     icon: "Wrench",
     title: "Bakım & Servis",
     description:
-      "Teslimat sonrası 2 yıl ücretsiz teknik bakım ve 10 yıla kadar yapısal güvence — biz teslim eder, biriz arkasında dururuz.",
-    bullets: ["2 yıl bakım garantisi", "10 yıl yapısal güvence", "Acil müdahale hattı"],
+      "Teslimat sonrası yapısal güvence. Biz teslim eder, biz arkasında dururuz.",
+    bullets: ["Yapısal güvence", "Teknik bakım desteği", "Acil müdahale hattı"],
   },
 ];
 
