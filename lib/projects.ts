@@ -16,8 +16,8 @@ export const PROJECTS: Project[] = [
     description:
       "Yapı ruhsatı alınmış ve Yusuf İnşaat'ın hem müteahhit hem hissedar olarak yer aldığı, kat irtifakı süreçleri yürütülen konut projeleri. Eyüpsultan, Sultangazi ve İstanbul'un kuzey aksında; imar ve yapı denetim mevzuatına tam uyumlu, şeffaf hak ediş ve teslim süreciyle ilerletiyoruz.",
     images: [
-      "/images/projects/ruhsatli-1.jpg",
       "/images/projects/ruhsatli-2.jpg",
+      "/images/projects/ruhsatli-1.jpg",
       "/images/projects/ruhsatli-3.jpg",
       "/images/projects/ruhsatli-4.jpg",
       "/images/projects/ruhsatli-5.jpg",
