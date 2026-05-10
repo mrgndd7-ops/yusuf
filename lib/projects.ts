@@ -46,6 +46,8 @@ export const PROJECTS: Project[] = [
       "/images/projects/tamamlanmis-1.jpg",
       "/images/projects/tamamlanmis-2.jpg",
       "/images/projects/tamamlanmis-3.jpg",
+      "/images/projects/tamamlanmis-4.jpg",
+      "/images/projects/tamamlanmis-5.jpg",
     ],
   },
   {
