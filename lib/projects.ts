@@ -78,6 +78,12 @@ export const PROJECTS: Project[] = [
       "/images/projects/ic-mekan-1.jpg",
       "/images/projects/ic-mekan-2.jpg",
       "/images/projects/ic-mekan-3.jpg",
+      "/images/projects/ic-mekan-4.jpg",
+      "/images/projects/ic-mekan-5.jpg",
+      "/images/projects/ic-mekan-6.jpg",
+      "/images/projects/ic-mekan-7.jpg",
+      "/images/projects/ic-mekan-8.jpg",
+      "/images/projects/ic-mekan-9.jpg",
     ],
   },
 ];
