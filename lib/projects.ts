@@ -19,6 +19,8 @@ export const PROJECTS: Project[] = [
       "/images/projects/ruhsatli-1.jpg",
       "/images/projects/ruhsatli-2.jpg",
       "/images/projects/ruhsatli-3.jpg",
+      "/images/projects/ruhsatli-4.jpg",
+      "/images/projects/ruhsatli-5.jpg",
     ],
   },
   {
