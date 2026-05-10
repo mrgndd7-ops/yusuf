@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
     badge: "İskan Sürecinde",
     subtitle: "Yapı Kullanma İzni · Belediye Süreci",
     description:
-      "Kaba inşaatı ve ince yapı işleri tamamlanmış; yapı kullanma izin belgesi (iskan) için belediye başvurusu yürüyen projeler. Mekanik tesisat, elektrik ve doğal gaz uygunluk işlemleri eksiksiz yapılır; daire teslimleri iskanın onayı ile birlikte gerçekleşir.",
+      "2021 ve sonrasında inşa ettiğimiz, kaba inşaatı ve ince yapı işleri tamamlanmış; yapı kullanma izin belgesi (iskan) için belediye başvurusu yürüyen projeler. Mekanik tesisat, elektrik ve doğal gaz uygunluk işlemleri eksiksiz yapılır; daire teslimleri iskanın onayı ile birlikte gerçekleşir.",
     images: [
       "/images/projects/iskan-1.jpg",
       "/images/projects/iskan-2.jpg",
