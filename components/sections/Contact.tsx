@@ -103,7 +103,7 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="lg:col-span-7 card-surface p-7 md:p-9 flex flex-col gap-5"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
               <h3 className="font-display text-[var(--color-text)]" style={{ fontSize: "1.5rem" }}>
                 {CONTACT.formTitle}
               </h3>
