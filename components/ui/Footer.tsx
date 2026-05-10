@@ -37,7 +37,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
             <a
               href={`tel:${SITE.phone}`}
-              className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] font-medium transition-all duration-200 hover:bg-[var(--color-accent-2)] hover:-translate-y-0.5 shadow-[0_10px_30px_-10px_rgba(200,169,110,0.6)]"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[var(--color-accent)] text-[var(--color-dark)] font-medium transition-all duration-200 hover:bg-[var(--color-accent-2)] hover:-translate-y-0.5 shadow-[0_10px_30px_-10px_rgba(200,169,110,0.6)]"
             >
               <Phone size={18} />
               Hemen Ara
@@ -47,7 +47,7 @@ export function Footer() {
               href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md border border-[var(--color-accent)] text-[var(--color-accent)] font-medium hover:bg-[var(--color-accent)] hover:text-[var(--color-dark)] transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-[var(--color-accent)] text-[var(--color-accent)] font-medium hover:bg-[var(--color-accent)] hover:text-[var(--color-dark)] transition-all duration-200"
             >
               <MessageCircle size={18} />
               WhatsApp'tan Yaz
