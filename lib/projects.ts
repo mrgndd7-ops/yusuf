@@ -61,6 +61,10 @@ export const PROJECTS: Project[] = [
       "/images/projects/yeni-1.jpg",
       "/images/projects/yeni-2.jpg",
       "/images/projects/yeni-3.jpg",
+      "/images/projects/yeni-4.jpg",
+      "/images/projects/yeni-5.jpg",
+      "/images/projects/yeni-6.jpg",
+      "/images/projects/yeni-7.jpg",
     ],
   },
   {
