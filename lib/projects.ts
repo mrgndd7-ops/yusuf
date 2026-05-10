@@ -97,6 +97,12 @@ export const PROJECTS: Project[] = [
       "/images/projects/ortak-1.jpg",
       "/images/projects/ortak-2.jpg",
       "/images/projects/ortak-3.jpg",
+      "/images/projects/ortak-4.jpg",
+      "/images/projects/ortak-5.jpg",
+      "/images/projects/ortak-6.jpg",
+      "/images/projects/ortak-7.jpg",
+      "/images/projects/ortak-8.jpg",
+      "/images/projects/ortak-9.jpg",
     ],
   },
 ];
