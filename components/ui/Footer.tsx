@@ -2,7 +2,10 @@ import Link from "next/link";
 import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/constants";
 
-const LEGAL = [
+const LEGAL: { label: string; href: string; external?: boolean }[] = [
+  { label: "Vergi Levhası", href: "/docs/vergi-levhasi.pdf", external: true },
+  { label: "Faaliyet Belgesi", href: "/docs/faaliyet-belgesi.pdf", external: true },
+  { label: "Ticaret Sicil Gazetesi", href: "/docs/ticaret-sicil-gazetesi.pdf", external: true },
   { label: "KVKK Aydınlatma Metni", href: "/kvkk" },
   { label: "Gizlilik Politikası", href: "/gizlilik" },
   { label: "Çerez Politikası", href: "/cerez" },
@@ -89,12 +92,23 @@ export function Footer() {
         <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 order-1 md:order-2">
           {LEGAL.map((l) => (
             <li key={l.href}>
-              <Link
-                href={l.href}
-                className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
-              >
-                {l.label}
-              </Link>
+              {l.external ? (
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  href={l.href}
+                  className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
+                >
+                  {l.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
