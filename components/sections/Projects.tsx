@@ -9,9 +9,9 @@ export function Projects() {
     <section id="projeler" className="relative bg-[var(--color-bg-2)] section-py">
       <div className="container-x">
         <SectionTitle
-          eyebrow="Seçili Projeler"
-          title="İstanbul'un dört bir yanında imzamız."
-          subtitle="Eyüpsultan'dan Sultanbeyli'ye, anahtar teslim ve renovasyon projelerinden bir seçki."
+          eyebrow="Projeler & Süreç"
+          title="Ruhsattan iskana, anahtar teslim her aşamada Yusuf İnşaat."
+          subtitle="İstanbul Eyüpsultan, Sultangazi, Sultanbeyli ve Yeşilpınar başta olmak üzere; ruhsatlı projelerden iskan sürecine, tamamlanmış konutlardan iç mekan ince işlerine kadar her aşamada şeffaf, belgeli ve denetlenebilir bir süreç."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
