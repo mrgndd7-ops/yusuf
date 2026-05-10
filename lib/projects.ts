@@ -1,68 +1,76 @@
 export type Project = {
   id: string;
   title: string;
-  location: string;
-  scope: string;
-  year: string;
+  badge: string;
+  subtitle: string;
   description: string;
   images: string[];
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: "eyupsultan-konut",
-    title: "Eyüpsultan Konutları",
-    location: "Eyüpsultan, İstanbul",
-    scope: "Anahtar Teslim · 12 Daire",
-    year: "2023",
+    id: "ruhsatli-hisseli",
+    title: "Ruhsat ve Hisse Sahibi Olduğumuz Projeler",
+    badge: "Ruhsatlı",
+    subtitle: "Yapı Ruhsatlı · Müteahhit & Hissedar",
     description:
-      "12 daireli butik konut projesi: modern doğal taş cephe, geniş yaşam alanları ve akıllı ev altyapısı.",
+      "Yapı ruhsatı alınmış ve Yusuf İnşaat'ın hem müteahhit hem hissedar olarak yer aldığı, kat irtifakı süreçleri yürütülen konut projeleri. Eyüpsultan, Sultangazi ve İstanbul'un kuzey aksında; imar ve yapı denetim mevzuatına tam uyumlu, şeffaf hak ediş ve teslim süreciyle ilerletiyoruz.",
     images: [
-      "/images/projects/eyupsultan-1.jpg",
-      "/images/projects/eyupsultan-2.jpg",
-      "/images/projects/eyupsultan-3.jpg",
+      "/images/projects/ruhsatli-1.jpg",
+      "/images/projects/ruhsatli-2.jpg",
+      "/images/projects/ruhsatli-3.jpg",
     ],
   },
   {
-    id: "sultangazi-villa",
-    title: "Sultangazi Villa",
-    location: "Sultangazi, İstanbul",
-    scope: "Müstakil Villa",
-    year: "2024",
+    id: "iskan-asamasinda",
+    title: "İskan Aşamasında Olan Projeler",
+    badge: "İskan Sürecinde",
+    subtitle: "Yapı Kullanma İzni · Belediye Süreci",
     description:
-      "Bahçeli müstakil villa: doğal taş cephe, panoramik camekan ve özel iç mimari paket.",
+      "Kaba inşaatı ve ince yapı işleri tamamlanmış; yapı kullanma izin belgesi (iskan) için belediye başvurusu yürüyen projeler. Mekanik tesisat, elektrik ve doğal gaz uygunluk işlemleri eksiksiz yapılır; daire teslimleri iskanın onayı ile birlikte gerçekleşir.",
     images: [
-      "/images/projects/sultangazi-1.jpg",
-      "/images/projects/sultangazi-2.jpg",
-      "/images/projects/sultangazi-3.jpg",
+      "/images/projects/iskan-1.jpg",
+      "/images/projects/iskan-2.jpg",
+      "/images/projects/iskan-3.jpg",
     ],
   },
   {
-    id: "yesilpinar-renovasyon",
-    title: "Yeşilpınar Renovasyon",
-    location: "Yeşilpınar, İstanbul",
-    scope: "Komple Yenileme",
-    year: "2024",
+    id: "tamamlanmis",
+    title: "Tamamlanmış Projeler",
+    badge: "Anahtar Teslim",
+    subtitle: "İskanlı · Anahtar Teslim",
     description:
-      "5 katlı binanın komple yenilenmesi: cephe, ıslak hacim, tesisat ve iç mekan dönüşümü.",
+      "Yapı kullanma izni alınmış, anahtar teslim edilmiş ve teslim sonrası iki yıllık ücretsiz bakım güvencesi devam eden projeler. Sözleşmeden teslime kadar her aşaması belgeli, raporlu ve denetlenebilir; sahibine ailesinin onurunu taşıyan, uzun ömürlü yapılar.",
     images: [
-      "/images/projects/yesilpinar-1.jpg",
-      "/images/projects/yesilpinar-2.jpg",
-      "/images/projects/yesilpinar-3.jpg",
+      "/images/projects/tamamlanmis-1.jpg",
+      "/images/projects/tamamlanmis-2.jpg",
+      "/images/projects/tamamlanmis-3.jpg",
     ],
   },
   {
-    id: "sultanbeyli-rezidans",
-    title: "Sultanbeyli Rezidans",
-    location: "Sultanbeyli, İstanbul",
-    scope: "Anahtar Teslim · 24 Daire",
-    year: "2025",
+    id: "yeni-projeler",
+    title: "Yeni Projeler",
+    badge: "Yakında",
+    subtitle: "Ön Satış · Yatırım Fırsatı",
     description:
-      "İki blok, 24 daire ve sosyal alanlardan oluşan butik rezidans: peyzajlı bahçe ve kapalı otopark.",
+      "Avan ve uygulama projeleri tamamlanmış, ruhsat ve ön satış sürecine giren yeni konut projeleri. Kentsel dönüşüm kapsamında mal sahibi yanlısı pay modelleri, şeffaf sözleşme yapısı ve İstanbul'un gelişen aksında yatırım değeri yüksek lokasyonlar.",
     images: [
-      "/images/projects/sultanbeyli-1.jpg",
-      "/images/projects/sultanbeyli-2.jpg",
-      "/images/projects/sultanbeyli-3.jpg",
+      "/images/projects/yeni-1.jpg",
+      "/images/projects/yeni-2.jpg",
+      "/images/projects/yeni-3.jpg",
+    ],
+  },
+  {
+    id: "ic-mekan",
+    title: "İç Mekan & İnce İşler",
+    badge: "İnce Yapı",
+    subtitle: "İç Tasarım · İnce Yapı İşleri",
+    description:
+      "Anahtar teslim ve renovasyon projelerinde iç mekan ince işleri: alçı ve sıva, parke, ıslak hacim seramik uygulamaları, mutfak ve banyo, boya ile dekoratif son kat işleri. Yaşam alanını kullanışlı ve uzun ömürlü kılan, detayları kaçırmayan bir işçilik anlayışı.",
+    images: [
+      "/images/projects/ic-mekan-1.jpg",
+      "/images/projects/ic-mekan-2.jpg",
+      "/images/projects/ic-mekan-3.jpg",
     ],
   },
 ];
