@@ -35,7 +35,7 @@ export function Navbar() {
             <a
               key={n.href}
               href={n.href}
-              className="text-sm text-[var(--color-text-soft)] hover:text-[var(--color-accent)] transition-colors duration-200"
+              className="text-sm font-medium text-[var(--color-text-soft)] hover:text-[var(--color-accent)] transition-colors duration-200"
             >
               {n.label}
             </a>
@@ -45,7 +45,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#iletisim"
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] text-sm font-medium hover:bg-[var(--color-accent-2)] transition-colors"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent)] text-[var(--color-dark)] text-sm font-medium hover:bg-[var(--color-accent-2)] transition-colors"
           >
             <Phone size={15} />
             Bize Ulaşın
@@ -69,7 +69,7 @@ export function Navbar() {
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="px-3 py-3 rounded-md text-[var(--color-text-soft)] hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] transition-colors"
+                className="px-3 py-3 rounded-md font-medium text-[var(--color-text-soft)] hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] transition-colors"
               >
                 {n.label}
               </a>
@@ -77,7 +77,7 @@ export function Navbar() {
             <a
               href="#iletisim"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-[var(--color-accent)] text-[var(--color-dark)] font-medium"
+              className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-[var(--color-accent)] text-[var(--color-dark)] font-medium"
             >
               <Phone size={16} />
               Bize Ulaşın
