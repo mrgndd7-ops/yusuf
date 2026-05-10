@@ -2,7 +2,7 @@
 
 import { useState, useRef, TouchEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, MapPin, ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/projects";
 
 type Props = { project: Project };
@@ -57,12 +57,8 @@ export function ProjectCard({ project }: Props) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)] via-[var(--color-dark)]/30 to-transparent opacity-90" />
 
-        <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[var(--color-dark)]/70 backdrop-blur-sm text-[var(--color-accent)] text-xs font-medium">
-          <MapPin size={12} />
-          {project.location}
-        </div>
-        <div className="absolute top-3 right-3 px-2.5 py-1 rounded bg-[var(--color-accent)] text-[var(--color-dark)] text-xs font-semibold tracking-wide">
-          {project.year}
+        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[var(--color-accent)] text-[var(--color-dark)] text-xs font-semibold tracking-wide">
+          {project.badge}
         </div>
 
         {total > 1 && (
@@ -111,8 +107,8 @@ export function ProjectCard({ project }: Props) {
             className="text-[var(--color-muted)] group-hover:text-[var(--color-accent)] group-hover:rotate-45 transition-all duration-300 mt-1 shrink-0"
           />
         </div>
-        <span className="text-xs uppercase tracking-widest text-[var(--color-accent)]">
-          {project.scope}
+        <span className="text-xs uppercase tracking-widest text-[var(--color-accent)] font-medium">
+          {project.subtitle}
         </span>
         <p className="text-[var(--color-muted)] text-sm leading-relaxed">
           {project.description}
