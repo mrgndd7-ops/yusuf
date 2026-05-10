@@ -12,7 +12,7 @@ const sizes: Record<Size, string> = {
 };
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2 font-medium rounded-md tracking-tight transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] focus-visible:ring-[var(--color-accent)] overflow-hidden";
+  "group relative inline-flex items-center justify-center gap-2 font-medium rounded-full tracking-tight transition-all duration-200 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] focus-visible:ring-[var(--color-accent)] overflow-hidden";
 
 function variantClasses(v: Variant) {
   switch (v) {
