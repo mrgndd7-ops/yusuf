@@ -86,4 +86,17 @@ export const PROJECTS: Project[] = [
       "/images/projects/ic-mekan-9.jpg",
     ],
   },
+  {
+    id: "ortak-alanlar",
+    title: "Bina Ortak Alanları & İşçilik",
+    badge: "Ortak Alan",
+    subtitle: "Otopark · Asansör · Peyzaj",
+    description:
+      "Binanın ortak yaşam alanlarındaki son kat işçilikleri: kapalı ve açık otopark, asansör kabin ve kapı kaplaması, merdiven kovası ile korkulukları, lobi ve giriş holü, peyzaj ve çevre düzenlemesi. Sakinlerin her gün dokunduğu detayları dairelerle aynı titizlikle bitiriyoruz; kullanım ömrü uzun, bakım maliyeti düşük çözümler.",
+    images: [
+      "/images/projects/ortak-1.jpg",
+      "/images/projects/ortak-2.jpg",
+      "/images/projects/ortak-3.jpg",
+    ],
+  },
 ];
