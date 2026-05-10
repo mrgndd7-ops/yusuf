@@ -33,7 +33,6 @@ export const PROJECTS: Project[] = [
     images: [
       "/images/projects/iskan-1.jpg",
       "/images/projects/iskan-2.jpg",
-      "/images/projects/iskan-3.jpg",
     ],
   },
   {
