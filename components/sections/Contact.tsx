@@ -2,38 +2,86 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, MessageCircle, Send, Check } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Send, Check, Loader2 } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
-import Button from "@/components/ui/Button";
 import { CONTACT, SITE } from "@/lib/constants";
 
-export function Contact() {
-  const [sent, setSent] = useState(false);
+type Status = "idle" | "sending" | "sent" | "error";
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const TALEP_TURLERI = [
+  "İnşaat Taahhüt (Ücret Mukabili Yenileme)",
+  "Kat Karşılığı İnşaat",
+  "Kentsel Dönüşüm Danışmanlık",
+  "Diğer",
+];
+
+export function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const buildWhatsAppText = (data: FormData) => {
+    const get = (k: string) => (data.get(k) || "").toString().trim();
+    const lines = [
+      "Merhaba Yusuf İnşaat, keşif talebim:",
+      "",
+      "İLETİŞİM",
+      `Ad Soyad: ${get("name")}`,
+      `Telefon: ${get("phone")}`,
+      get("email") ? `E-Posta: ${get("email")}` : "",
+      "",
+      "ARSA / ARAZİ BİLGİLERİ",
+      `İl: ${get("il")}`,
+      `İlçe: ${get("ilce")}`,
+      get("mahalle") ? `Mahalle: ${get("mahalle")}` : "",
+      get("ada_parsel") ? `Ada / Parsel: ${get("ada_parsel")}` : "",
+      get("arsa_m2") ? `Arsa m²: ${get("arsa_m2")}` : "",
+      get("imar") ? `İmar Durumu (Emsal): ${get("imar")}` : "",
+      "",
+      `TALEP TÜRÜ: ${get("talep_turu") || "-"}`,
+      "",
+      "MESAJ:",
+      get("message") || "-",
+    ].filter(Boolean);
+    return lines.join("\n");
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = (data.get("name") || "").toString().trim();
-    const phone = (data.get("phone") || "").toString().trim();
-    const subject = (data.get("subject") || "").toString().trim();
-    const message = (data.get("message") || "").toString().trim();
 
-    const lines = [
-      "Merhaba Yusuf İnşaat,",
-      "",
-      `Ad Soyad: ${name}`,
-      `Telefon: ${phone}`,
-    ];
-    if (subject) lines.push(`Proje Türü: ${subject}`);
-    lines.push("", "Mesaj:", message);
+    setStatus("sending");
+    setErrorMsg("");
 
-    const text = lines.join("\n");
+    try {
+      const payload = Object.fromEntries(data.entries());
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.error || "Gönderim başarısız oldu.");
+      }
+
+      setStatus("sent");
+      form.reset();
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (err: unknown) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "Bilinmeyen hata");
+    }
+  };
+
+  const onWhatsApp = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const form = e.currentTarget.closest("form") as HTMLFormElement | null;
+    if (!form) return;
+    const data = new FormData(form);
+    const text = buildWhatsAppText(data);
     const url = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
-    setSent(true);
-    form.reset();
-    setTimeout(() => setSent(false), 4000);
   };
 
   return (
@@ -53,7 +101,7 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-5 flex flex-col gap-5"
+            className="lg:col-span-4 flex flex-col gap-5"
           >
             <a
               href={`tel:${SITE.phone}`}
@@ -101,7 +149,7 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="lg:col-span-7 card-surface p-7 md:p-9 flex flex-col gap-5"
+            className="lg:col-span-8 card-surface p-7 md:p-9 flex flex-col gap-6"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
               <h3 className="font-display text-[var(--color-text)]" style={{ fontSize: "1.5rem" }}>
@@ -110,19 +158,91 @@ export function Contact() {
               <span className="text-xs text-[var(--color-muted)]">{CONTACT.formNote}</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Field name="name" label="Ad Soyad *" required />
-              <Field name="phone" label="Telefon *" type="tel" required />
-            </div>
-            <Field name="subject" label="Proje Türü" placeholder="Konut / Tadilat / Danışmanlık" />
-            <FieldArea name="message" label="Mesajınız *" required />
+            {/* İletişim Bilgileri */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="text-xs uppercase tracking-widest text-[var(--color-muted)] font-bold mb-1">
+                İletişim Bilgileriniz <span className="text-[var(--color-accent)]">*</span>
+              </legend>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <Field name="name" placeholder="İsim" required />
+                <Field name="phone" type="tel" placeholder="Telefon" required />
+                <Field name="email" type="email" placeholder="E-Posta" />
+              </div>
+            </fieldset>
+
+            {/* Arsa Bilgileri */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="text-xs uppercase tracking-widest text-[var(--color-muted)] font-bold mb-1">
+                Arazi Özellikleri – Arsa Konum Bilgileri <span className="text-[var(--color-accent)]">*</span>
+              </legend>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <Field name="il" placeholder="İl" required />
+                <Field name="ilce" placeholder="İlçe" required />
+                <Field name="mahalle" placeholder="Mahalle" />
+                <Field name="ada_parsel" placeholder="Ada / Parsel" />
+                <Field name="arsa_m2" placeholder="Arsa m²" />
+                <Field name="imar" placeholder="İmar Durumu (Emsal)" />
+              </div>
+            </fieldset>
+
+            {/* Talep Türü */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="text-sm text-[var(--color-text)] font-bold mb-1">
+                Arsa veya Binanızı nasıl değerlendirmek istersiniz?
+              </legend>
+              <div className="flex flex-col gap-2">
+                {TALEP_TURLERI.map((t) => (
+                  <label
+                    key={t}
+                    className="flex items-center gap-3 cursor-pointer group text-[var(--color-text-soft)] hover:text-[var(--color-text)] transition-colors"
+                  >
+                    <input
+                      type="radio"
+                      name="talep_turu"
+                      value={t}
+                      className="peer sr-only"
+                    />
+                    <span className="grid place-items-center w-5 h-5 rounded-full border-2 border-[var(--color-border)] peer-checked:border-[var(--color-accent)] transition-colors">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] scale-0 peer-checked:scale-100 transition-transform" />
+                    </span>
+                    <span className="text-sm">{t}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <FieldArea name="message" placeholder="Yorum veya Mesaj" />
+
+            {/* Status */}
+            {status === "sent" && (
+              <div className="rounded-md border border-[var(--color-accent)] bg-[var(--color-accent-soft)] text-[var(--color-text)] px-4 py-3 text-sm">
+                Teşekkürler! Talebiniz tarafımıza ulaştı. En kısa sürede dönüş yapacağız.
+              </div>
+            )}
+            {status === "error" && (
+              <div className="rounded-md border border-red-500/40 bg-red-500/10 text-red-300 px-4 py-3 text-sm">
+                Mail gönderilemedi: {errorMsg}. Lütfen WhatsApp seçeneğini kullanın veya bizi arayın.
+              </div>
+            )}
 
             <div className="flex items-center justify-between flex-wrap gap-4 pt-2">
-              <span className="text-xs text-[var(--color-muted)]">
-                Form, WhatsApp üzerinden tarafımıza iletilir.
-              </span>
-              <Button type="submit" variant="primary" size="lg">
-                {sent ? (
+              <button
+                type="button"
+                onClick={onWhatsApp}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-border)] text-[var(--color-text-soft)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors text-sm"
+              >
+                <MessageCircle size={16} /> WhatsApp&apos;tan Yaz
+              </button>
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--color-accent)] text-[var(--color-dark)] font-medium hover:bg-[var(--color-accent-2)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === "sending" ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" /> Gönderiliyor…
+                  </>
+                ) : status === "sent" ? (
                   <>
                     <Check size={18} /> Gönderildi
                   </>
@@ -131,7 +251,7 @@ export function Contact() {
                     Gönder <Send size={16} />
                   </>
                 )}
-              </Button>
+              </button>
             </div>
           </motion.form>
         </div>
@@ -142,50 +262,43 @@ export function Contact() {
 
 function Field({
   name,
-  label,
   type = "text",
   required,
   placeholder,
 }: {
   name: string;
-  label: string;
   type?: string;
   required?: boolean;
   placeholder?: string;
 }) {
   return (
-    <label className="flex flex-col gap-2">
-      <span className="text-xs uppercase tracking-widest text-[var(--color-muted)]">{label}</span>
-      <input
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md px-4 py-3 text-[var(--color-text)] placeholder:text-[var(--color-muted-2)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)] transition-all"
-      />
-    </label>
+    <input
+      name={name}
+      type={type}
+      required={required}
+      placeholder={placeholder}
+      className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md px-4 py-3 text-[var(--color-text)] placeholder:text-[var(--color-muted-2)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)] transition-all"
+    />
   );
 }
 
 function FieldArea({
   name,
-  label,
   required,
+  placeholder,
 }: {
   name: string;
-  label: string;
   required?: boolean;
+  placeholder?: string;
 }) {
   return (
-    <label className="flex flex-col gap-2">
-      <span className="text-xs uppercase tracking-widest text-[var(--color-muted)]">{label}</span>
-      <textarea
-        name={name}
-        required={required}
-        rows={5}
-        className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md px-4 py-3 text-[var(--color-text)] placeholder:text-[var(--color-muted-2)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)] transition-all resize-none"
-      />
-    </label>
+    <textarea
+      name={name}
+      required={required}
+      placeholder={placeholder}
+      rows={5}
+      className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md px-4 py-3 text-[var(--color-text)] placeholder:text-[var(--color-muted-2)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)] transition-all resize-none"
+    />
   );
 }
 

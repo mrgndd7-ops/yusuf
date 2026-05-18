@@ -15,7 +15,7 @@ export const NAV = [
   { label: "Süreç", href: "#surec" },
   { label: "Projeler", href: "#projeler" },
   { label: "Yorumlar", href: "#yorumlar" },
-  { label: "İletişim", href: "#iletisim" },
+  { label: "Keşif Formu", href: "#iletisim" },
 ] as const;
 
 export const HERO = {
@@ -184,12 +184,12 @@ export const ABOUT = {
 };
 
 export const CONTACT = {
-  title: "İletişime Geçin",
+  title: "Keşif Talebi Formu",
   eyebrow: "Bir Çay, Bir Plan",
   subtitle:
     "Projeniz için ücretsiz keşif ve detaylı teklif. Sahaya gelir, dinleriz; teklif 5 iş günü içinde elinize ulaşır.",
   callLabel: "Hemen Ara",
   whatsappLabel: "WhatsApp'tan Yaz",
-  formTitle: "Bize Yazın",
+  formTitle: "Keşif Talebi Formu",
   formNote: "* zorunlu alanlar. Verileriniz yalnızca size dönüş için kullanılır.",
 };

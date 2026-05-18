@@ -16,7 +16,8 @@
     "gsap": "^3.12.5",
     "@gsap/react": "^2.1.1",
     "img-comparison-slider": "^8.0.6",
-    "lucide-react": "^0.453.0"
+    "lucide-react": "^0.453.0",
+    "resend": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.16.11",
