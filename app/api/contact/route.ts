@@ -3,7 +3,7 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "mr.gndd7@gmail.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "Evliyasabocan8@gmail.com";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Yusuf İnşaat <onboarding@resend.dev>";
 
 function esc(s: string) {
