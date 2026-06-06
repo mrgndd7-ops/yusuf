@@ -18,7 +18,9 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
+        open
+          ? "bg-black border-b border-[var(--color-border)]"
+          : scrolled
           ? "bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-border)]"
           : "bg-transparent"
       }`}
@@ -62,7 +64,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur-md">
+        <div className="lg:hidden border-t border-[var(--color-border)] bg-black">
           <nav className="container-x flex flex-col py-4 gap-1">
             {NAV.map((n) => (
               <a
